@@ -14,8 +14,7 @@ public class Lab {
         e1.addMeasurement("Electric current",5,"A");
         e1.addMeasurement("Close to 12 lumens",1,"cd");
 
-        Experiment e2 = new Experiment();
-        e2.summary = "Measure Distance";
+        Experiment e2 = new Experiment("Measure Distance");
         e2.addMeasurement("Quite close",12.5,"m");
         e2.addMeasurement("Imperial unit check",12.5/0.3048, "ft");
         e2.addMeasurement(null,5,"ft");
@@ -23,7 +22,7 @@ public class Lab {
         System.out.println(e1.experimentReport());
         System.out.println(e2.experimentReport());
 
-        e1.summary = "Measured different things";
+        e1.setSummary("Measured different things");
         System.out.println(e1.experimentReport());
 
         e1.addMeasurement("Final weight",12,"kg");
@@ -32,7 +31,7 @@ public class Lab {
         e2.addMeasurement("Wrong unit",12.5,"x");
         System.out.println(e2.experimentReport());
 
-        e2.measurements[0].note = null;
-        System.out.println(e2.experimentReport());
+//        e2.measurements[0].note = null;
+//        System.out.println(e2.experimentReport());
     }
 }
