@@ -2,6 +2,9 @@ public class Lab {
     static void main(String[] args) {
 //        System.out.println("Hello World!");
 //        System.out.println("Hello " + args[0]);
+        double meters = Measurement.convertValue("ft", 12.5);
+        System.out.println(meters);
+
         Experiment e1 = new Experiment();
         e1.addMeasurement("Initial weight",24.57,"kg");
         e1.addMeasurement("Imperial unit check",42,"lb");

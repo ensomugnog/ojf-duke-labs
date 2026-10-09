@@ -1,8 +1,8 @@
 public class Measurement {
-    private final String[] SI_UNITS = {"s","m","kg","A","K","mol","cd"};
-    private final String[] IMPERIAL_UNITS = {"ft","lb","F"};
-    private final double ft2m = 0.3048;
-    private final double lb2kg = 0.4536;
+    private static final String[] SI_UNITS = {"s","m","kg","A","K","mol","cd"};
+    private static final String[] IMPERIAL_UNITS = {"ft","lb","F"};
+    private static final double ft2m = 0.3048;
+    private static final double lb2kg = 0.4536;
     private String note;
     private double value;
     private String unit;
@@ -50,7 +50,7 @@ public class Measurement {
         return false;
     }
 
-    public String convertUnit(String unit) {
+    public static String convertUnit(String unit) {
         return switch(unit) {
             case "ft" -> SI_UNITS[1];
             case "lb" -> SI_UNITS[2];
@@ -59,7 +59,7 @@ public class Measurement {
         };
     }
 
-    public double convertValue(String unit, double value) {
+    public static double convertValue(String unit, double value) {
         return switch(unit) {
             case "ft" -> value*ft2m;
             case "lb" -> value*lb2kg;
