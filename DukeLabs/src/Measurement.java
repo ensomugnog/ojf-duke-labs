@@ -67,4 +67,9 @@ public class Measurement {
             default -> value;
         };
     }
+
+    @Override
+    public String toString() {
+        return note+"\t"+value+" "+unit;
+    }
 }

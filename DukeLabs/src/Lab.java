@@ -22,17 +22,17 @@ public class Lab {
         e2.addMeasurement("Imperial unit check",12.5/0.3048, "ft");
         e2.addMeasurement(null,5,"ft");
 
-        System.out.println(e1.experimentReport());
-        System.out.println(e2.experimentReport());
+        System.out.println(e1);
+        System.out.println(e2);
 
         e1.setSummary("Measured different things");
-        System.out.println(e1.experimentReport());
+        System.out.println(e1);
 
         e1.addMeasurement("Final weight",12,"kg");
-        System.out.println(e1.experimentReport());
+        System.out.println(e1);
 
         e2.addMeasurement("Wrong unit",12.5,"x");
-        System.out.println(e2.experimentReport());
+        System.out.println(e2);
 
 //        e2.measurements[0].note = null;
 //        System.out.println(e2.experimentReport());
