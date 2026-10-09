@@ -22,11 +22,18 @@ public class Experiment {
     }
 
     public void addMeasurement(String note, double value, String unit)  {
-        for (int i = 0; i < measurements.length; i++) {
-            if (measurements[i] == null) {
-                measurements[i] = new Measurement(note, value, unit);
-                break;
+        try {
+            if (measurements[measurements.length-1] != null) {
+                throw new Exception("Error: Too many measurements");
             }
+            for (int i = 0; i < measurements.length; i++) {
+                if (measurements[i] == null) {
+                    measurements[i] = new Measurement(note, value, unit);
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
         }
     }
 

@@ -19,7 +19,7 @@ public class Measurement {
         return unit;
     }
 
-    public Measurement(String note, double value, String unit) {
+    public Measurement(String note, double value, String unit) throws Exception {
         this.note = (note == null) ? "No notes" : note;
         if (isSI(unit)) {
             this.unit = unit;
@@ -28,6 +28,8 @@ public class Measurement {
             if (isImperial(unit)) {
                 this.unit = convertUnit(unit);
                 this.value = convertValue(unit, value);
+            } else {
+                throw new Exception("Error: "+unit+" is not a valid unit");
             }
         }
     }
